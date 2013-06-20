@@ -1,4 +1,4 @@
-package com.janpix.hl7.v3.messages;
+package com.janpix.hl7dto.hl7.v3.messages;
 
 import java.util.List;
 
@@ -8,8 +8,8 @@ import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
-import com.janpix.hl7.v3.datatypes.II;
-import com.janpix.hl7.v3.datatypes.TEL;
+import com.janpix.hl7dto.hl7.v3.datatypes.II;
+import com.janpix.hl7dto.hl7.v3.datatypes.TEL;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name="Device")

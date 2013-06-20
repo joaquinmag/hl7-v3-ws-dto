@@ -1,4 +1,4 @@
-package com.janpix.hl7.v3.messages;
+package com.janpix.hl7dto.hl7.v3.messages;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,7 +8,7 @@ import javax.xml.bind.annotation.XmlElement;
 
 
 
-import com.janpix.hl7.v3.datatypes.*;
+import com.janpix.hl7dto.hl7.v3.datatypes.*;
 
 
 public class HL7Message {

@@ -1,10 +1,8 @@
-package com.janpix.hl7.v3.datatypes;
+package com.janpix.hl7dto.hl7.v3.datatypes;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlType;
-
-import org.hl7.types.*;
 
 /** Minimal implementation of II as a model we can use for all other
     type. This one is only used to convey NULL values. Again, we have

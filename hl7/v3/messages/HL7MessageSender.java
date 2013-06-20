@@ -1,9 +1,9 @@
-package com.janpix.hl7.v3.messages;
+package com.janpix.hl7dto.hl7.v3.messages;
 
 
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
-import com.janpix.hl7.v3.datatypes.enums.CommunicationFunctionType;
+import com.janpix.hl7dto.hl7.v3.datatypes.enums.CommunicationFunctionType;
 
 
 
