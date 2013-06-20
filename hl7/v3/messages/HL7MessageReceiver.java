@@ -9,7 +9,7 @@ import com.janpix.hl7dto.hl7.v3.datatypes.enums.*;
 
 public class HL7MessageReceiver {
 	@XmlElement(required = true)
-    protected Device device;
+    public Device device;
 	@XmlAttribute(name = "typeCode", required = true)
-    protected CommunicationFunctionType typeCode;
+    public CommunicationFunctionType typeCode;
 }
