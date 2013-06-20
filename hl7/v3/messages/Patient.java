@@ -1,0 +1,31 @@
+package com.janpix.hl7dto.hl7.v3.messages;
+
+import java.util.ArrayList;
+import java.util.List;
+import javax.xml.bind.JAXBElement;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlElementRef;
+import javax.xml.bind.annotation.XmlType;
+import com.janpix.hl7dto.hl7.v3.datatypes.II;
+import com.janpix.hl7dto.hl7.v3.datatypes.AD;
+import com.janpix.hl7dto.hl7.v3.datatypes.TEL;
+import com.janpix.hl7dto.hl7.v3.datatypes.CS;
+
+@XmlAccessorType(XmlAccessType.FIELD)
+public class Patient {
+    @XmlElement(required = true)
+    public List<II> id;
+    public List<AD> addr;
+    public List<TEL> telecom;
+    @XmlElement(required = true)
+    public CS statusCode;
+    @XmlElementRef(name = "patientPerson", namespace = "urn:hl7-org:v3", required = false)
+    public Person patientPerson;
+    @XmlElement(required = true, nillable = true)
+    public Organization providerOrganization;
+    @XmlAttribute(name = "classCode", required = true)
+    public List<String> classCode;
+}
