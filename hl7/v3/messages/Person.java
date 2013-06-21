@@ -33,6 +33,8 @@ public class Person {
     public List<AD> addr;
     public CE maritalStatusCode;
     public CE educationLevelCode;
+    @XmlElement(nillable = true)
+    public List<OtherIDs> asOtherIDs;
     @XmlElement(name = "birthPlace", namespace = "urn:hl7-org:v3", required = false)
     public BirthPlace birthPlace;
     @XmlAttribute(name = "classCode")
