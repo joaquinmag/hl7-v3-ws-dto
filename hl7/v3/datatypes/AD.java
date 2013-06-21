@@ -18,6 +18,8 @@ public class AD {
 	public String province;
 	@XmlElement(name="country")
 	public String country;
+	@XmlElement(name="additionalLocator")
+	public String additionalLocator;
     @XmlAttribute(name = "use")
     public List<String> use;
     @XmlAttribute(name = "isNotOrdered")

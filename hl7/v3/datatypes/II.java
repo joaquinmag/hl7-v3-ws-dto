@@ -22,7 +22,7 @@ public class II {
 	@XmlAttribute(name = "assigningAuthority")
 	public String assigningAuthorityName;
 	@XmlAttribute(name = "displayable")
-	public Boolean displayable;
+	public Boolean displayable = true;
 
 
 };

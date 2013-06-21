@@ -30,6 +30,8 @@ public class HL7Message {
     @XmlElement(required = true)
     public HL7MessageSender sender;
     @XmlElement(required = true)
+    public ControlActProcess controlActProcess;
+    @XmlElement(required = true)
     public CS acceptAckCode;
 
 
