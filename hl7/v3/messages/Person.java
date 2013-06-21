@@ -21,7 +21,6 @@ import com.janpix.hl7dto.hl7.v3.datatypes.TS;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Person {
-    public List<PersonId> id;
     @XmlElement(required = true)
     public List<PN> name;
     public List<TEL> telecom;
