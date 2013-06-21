@@ -7,6 +7,8 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
+import com.janpix.hl7dto.hl7.v3.datatypes.enums.ActClassControlAct;
+import com.janpix.hl7dto.hl7.v3.datatypes.enums.XActMoodIntentEvent;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 public class ControlActProcess {
