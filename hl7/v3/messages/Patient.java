@@ -14,6 +14,7 @@ import com.janpix.hl7dto.hl7.v3.datatypes.AD;
 import com.janpix.hl7dto.hl7.v3.datatypes.TEL;
 import com.janpix.hl7dto.hl7.v3.datatypes.CS;
 
+
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Patient {
     @XmlElement(required = true)
@@ -24,8 +25,8 @@ public class Patient {
     public CS statusCode;
     @XmlElementRef(name = "patientPerson", namespace = "urn:hl7-org:v3", required = false)
     public Person patientPerson;
-    @XmlElement(required = true, nillable = true)
-    public Organization providerOrganization;
+    //@XmlElement(required = true, nillable = true)
+    // TODO public Organization providerOrganization;
     @XmlAttribute(name = "classCode", required = true)
     public List<String> classCode;
 }

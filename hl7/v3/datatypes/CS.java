@@ -11,11 +11,6 @@ import javax.xml.bind.annotation.XmlType;
 */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "CS")
-public final class CS {
-
-	@XmlAttribute(name = "code")
-	public String code;
-
-
+public final class CS extends CE {
 
 };

@@ -13,7 +13,7 @@ import javax.xml.bind.annotation.XmlType;
 */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "II")
-public final class II {
+public class II {
 
 	@XmlAttribute(name = "extension")
 	public String extension;
