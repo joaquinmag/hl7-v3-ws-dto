@@ -33,9 +33,8 @@ public class Person {
     public List<AD> addr;
     public CE maritalStatusCode;
     public CE educationLevelCode;
-    public CE livingArrangementCode;
-    //@XmlElementRef(name = "birthPlace", namespace = "urn:hl7-org:v3", type = JAXBElement.class, required = false)
-    //protected JAXBElement<PRPAMT201302UV02BirthPlace> birthPlace;
+    @XmlElement(name = "birthPlace", namespace = "urn:hl7-org:v3", required = false)
+    public BirthPlace birthPlace;
     @XmlAttribute(name = "classCode")
     public List<String> classCode;
 }
