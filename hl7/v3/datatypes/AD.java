@@ -20,6 +20,8 @@ public class AD {
 	public String country;
 	@XmlElement(name="additionalLocator")
 	public String additionalLocator;
+	@XmlElement(name="postalCode")
+	public String postalCode;
     @XmlAttribute(name = "use")
     public List<String> use;
     @XmlAttribute(name = "isNotOrdered")

@@ -18,4 +18,8 @@ public class ControlActProcess {
     public ActClassControlAct classCode;
     @XmlAttribute(name = "moodCode", required = true)
     public XActMoodIntentEvent moodCode;
+    
+    public ControlActProcess() {
+    	this.subject = new ArrayList<Subject1>();
+    }
 }

@@ -39,4 +39,12 @@ public class Person {
     public BirthPlace birthPlace;
     @XmlAttribute(name = "classCode")
     public List<String> classCode;
+    
+    public Person() {
+    	name = new ArrayList<PN>();
+    	telecom = new ArrayList<TEL>();
+    	addr = new ArrayList<AD>();
+    	asOtherIDs = new ArrayList<OtherIDs>();
+    	classCode = new ArrayList<String>();
+    }
 }
