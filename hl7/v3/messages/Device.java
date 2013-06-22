@@ -1,5 +1,6 @@
 package com.janpix.hl7dto.hl7.v3.messages;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -19,4 +20,9 @@ public class Device {
 	@XmlElement(required = true)
     public List<II> id;
     public List<TEL> telecom;
+    
+    public Device() {
+    	id = new ArrayList<II>();
+    	telecom = new ArrayList<TEL>();
+    }
 }

@@ -15,12 +15,18 @@ import com.janpix.hl7dto.hl7.v3.datatypes.II;
 @XmlType(name = "Organization")
 public class Organization {
     @XmlElement(required = true)
-    protected List<II> id;
+    public List<II> id;
     @XmlElement(name = "name")
-    protected List<ON> name;
-    protected List<AD> addr;
+    public List<ON> name;
+    public List<AD> addr;
     @XmlAttribute(name = "classCode", required = true)
-    protected String classCode;
+    public String classCode;
     @XmlAttribute(name = "determinerCode", required = true)
-    protected String determinerCode;
+    public String determinerCode;
+    
+    public Organization() {
+    	id = new ArrayList<II>();
+    	name = new ArrayList<ON>();
+    	addr = new ArrayList<AD>();
+    }
 }

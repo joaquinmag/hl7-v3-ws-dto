@@ -20,4 +20,9 @@ public class OtherIDs {
     public Organization scopingOrganization;
     @XmlAttribute(name = "classCode", required = true)
     public List<String> classCode;
+    
+    public OtherIDs() {
+    	id = new ArrayList<II>();
+    	classCode = new ArrayList<String>();
+    }
 }

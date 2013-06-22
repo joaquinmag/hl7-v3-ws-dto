@@ -22,4 +22,10 @@ public class RegistrationEvent {
     public List<String> classCode;
     @XmlAttribute(name = "moodCode", required = true)
     public List<String> moodCode;
+    
+    public RegistrationEvent() {
+    	id = new ArrayList<II>();
+    	classCode = new ArrayList<String>();
+    	moodCode = new ArrayList<String>();
+    }
 }

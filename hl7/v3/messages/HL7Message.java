@@ -34,6 +34,7 @@ public class HL7Message {
     @XmlElement(required = true)
     public CS acceptAckCode;
 
-
-
+    public HL7Message() {
+    	receiver = new ArrayList<HL7MessageReceiver>();
+    }
 }

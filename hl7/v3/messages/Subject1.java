@@ -14,4 +14,8 @@ public class Subject1 {
     public RegistrationEvent registrationEvent;
     @XmlAttribute(name = "typeCode", required = true)
     public List<String> typeCode;
+    
+    public Subject1() {
+    	typeCode = new ArrayList<String>();
+    }
 }

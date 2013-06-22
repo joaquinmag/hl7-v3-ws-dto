@@ -27,4 +27,11 @@ public class Patient {
     public Person patientPerson;
     @XmlAttribute(name = "classCode", required = true)
     public List<String> classCode;
+    
+    public Patient() {
+    	id = new ArrayList<II>();
+    	addr = new ArrayList<AD>();
+    	telecom = new ArrayList<TEL>();
+    	classCode = new ArrayList<String>();
+    }
 }
