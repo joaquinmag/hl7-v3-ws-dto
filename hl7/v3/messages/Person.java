@@ -30,7 +30,7 @@ public class Person {
     public CE educationLevelCode;
     @XmlElement(nillable = true)
     public List<OtherIDs> asOtherIDs;
-    @XmlElement(name = "birthPlace", namespace = "urn:hl7-org:v3", required = false)
+    @XmlElement(name = "birthPlace",required = false)
     public BirthPlace birthPlace;
     @XmlAttribute(name = "classCode")
     public List<String> classCode;

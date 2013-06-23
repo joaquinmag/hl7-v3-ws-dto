@@ -23,7 +23,7 @@ public class Patient {
     public List<TEL> telecom;
     @XmlElement(required = true)
     public CS statusCode;
-    @XmlElementRef(name = "patientPerson", namespace = "urn:hl7-org:v3", required = false)
+    @XmlElement(name = "patientPerson",required = false)
     public Person patientPerson;
     @XmlAttribute(name = "classCode", required = true)
     public List<String> classCode;
