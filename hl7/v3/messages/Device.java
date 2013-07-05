@@ -16,7 +16,9 @@ import com.janpix.hl7dto.hl7.v3.datatypes.TEL;
 @XmlType(name="Device")
 public class Device {
 	@XmlAttribute(name = "determinerCode", required = true)
-    protected String determinerCode = "INSTANCE";
+    public String determinerCode = "INSTANCE";
+	@XmlAttribute(name = "classCode")
+	public String classCode = "DEV";
 	@XmlElement(required = true)
     public List<II> id;
     public List<TEL> telecom;
