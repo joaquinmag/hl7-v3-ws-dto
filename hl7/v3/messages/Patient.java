@@ -27,6 +27,8 @@ public class Patient {
     public Person patientPerson;
     @XmlAttribute(name = "classCode", required = true)
     public List<String> classCode;
+    @XmlElement(required = false)
+    public ProviderOrganization providerOrganization;
     
     public Patient() {
     	id = new ArrayList<II>();
