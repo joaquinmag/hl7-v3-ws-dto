@@ -11,5 +11,5 @@ public class HL7MessageSender {
 	@XmlElement(required = true)
     public Device device;
 	@XmlAttribute(name = "typeCode", required = true)
-    public CommunicationFunctionType typeCode;
+    public CommunicationFunctionType typeCode = CommunicationFunctionType.SND;
 }
