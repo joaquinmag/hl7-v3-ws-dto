@@ -1,18 +1,17 @@
 package com.janpix.hl7dto.hl7.v3.interfaces;
 
-import com.janpix.hl7dto.hl7.v3.contracts.*;
-import com.janpix.hl7dto.hl7.v3.datatypes.*;
-import com.janpix.hl7dto.hl7.v3.messages.HL7Message;
-import com.janpix.hl7dto.hl7.v3.messages.HL7OperationMessage;
-
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
 import javax.jws.WebResult;
 import javax.jws.WebService;
 import javax.jws.soap.SOAPBinding;
-import javax.jws.soap.SOAPBinding.*;
+import javax.jws.soap.SOAPBinding.ParameterStyle;
 
 import org.apache.cxf.annotations.WSDLDocumentation;
+
+import com.janpix.hl7dto.hl7.v3.messages.HL7OperationMessage;
+import com.janpix.hl7dto.hl7.v3.messages.ack.AcknowledgmentMessage;
+import com.janpix.hl7dto.hl7.v3.messages.ack.QueryAcknowledgmentMessage;
 
 
 @WebService(name = "PixManager",targetNamespace = "urn:ihe:iti:pixv3:2007")
@@ -28,9 +27,9 @@ public interface PixManagerInterface {
 	@WebMethod(operationName = "PRPA_IN201301UV02_Message")
 	@WebResult(name = "MCCI_IN000002UV01",targetNamespace="urn:hl7-org:v3",partName = "Body")
 	@WSDLDocumentation("Add new patients to the PIX. Patient Registry Record Added(IHE_ITI Vol 2b - Seccion: 3.44.4.1)")
-	public MCCIIN000002UV01 AddNewPatient(
+	public AcknowledgmentMessage AddNewPatient(
 			@WebParam(name = "PRPA_IN201301UV02",targetNamespace="urn:hl7-org:v3",partName="Body") 
-			PRPAIN201301UV02 body
+			HL7OperationMessage body
 		);
 	
 	
@@ -43,9 +42,9 @@ public interface PixManagerInterface {
 	@WebMethod(operationName = "PRPA_IN201304UV02_Message")
 	@WebResult(name = "MCCI_IN000002UV01", targetNamespace = "urn:hl7-org:v3", partName = "Body")
 	@WSDLDocumentation("Merges two patients that where added as different patients. Patient Registry Duplicates Resolved (IHE_ITI Vol 2b - Seccion: 3.44.4)")
-	public MCCIIN000002UV01 MergePatients(
+	public AcknowledgmentMessage MergePatients(
 			@WebParam(name = "PRPA_IN201304UV02", targetNamespace = "urn:hl7-org:v3",partName = "Body")
-			/*PRPAIN201304UV02*/HL7OperationMessage body
+			HL7OperationMessage body
 		);
 	
 	/**
@@ -57,9 +56,9 @@ public interface PixManagerInterface {
 	@WebMethod(operationName = "PRPA_IN201302UV02_Message")
 	@WebResult(name = "MCCI_IN000002UV01", targetNamespace = "urn:hl7-org:v3", partName = "Body")
 	@WSDLDocumentation("This method is for updating patient information. Patient Registry Record Revised(IHE_ITI Vol 2b - Seccion: 3.44.4.1)")
-	public MCCIIN000002UV01 UpdatePatient (
+	public AcknowledgmentMessage UpdatePatient (
 			@WebParam(name = "PRPA_IN201302UV02", targetNamespace = "urn:hl7-org:v3",partName = "Body")
-			/*PRPAIN201302UV02*/ HL7OperationMessage body
+			HL7OperationMessage body
 		);
 	
 	/**
@@ -71,9 +70,9 @@ public interface PixManagerInterface {
 	@WebMethod(operationName = "PRPA_IN201309UV02_Message")
 	@WebResult(name = "PRPA_IN201310UV02", targetNamespace = "urn:hl7-org:v3", partName = "Body")
 	@WSDLDocumentation("Returns all the identifiers of a patient. Patient Registry Get Identifiers Query (IHE_ITI Vol 2b - Seccion: 3.45.4)")
-	public /*PRPAIN201310UV02*/HL7OperationMessage GetAllIdentifiersPatient(
+	public QueryAcknowledgmentMessage GetAllIdentifiersPatient(
 			@WebParam( name = "PRPA_IN201309UV02", targetNamespace = "urn:hl7-org:v3", partName = "Body")
-			/*PRPAIN201309UV02*/HL7OperationMessage body);
+			HL7OperationMessage body);
 	
 	
 	
