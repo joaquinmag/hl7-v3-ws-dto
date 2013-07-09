@@ -3,12 +3,14 @@ package com.janpix.hl7dto.hl7.v3.messages;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.xml.bind.annotation.XmlAnyElement;
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlElements;
+import javax.xml.bind.annotation.XmlTransient;
 
 
 
 import com.janpix.hl7dto.hl7.v3.datatypes.*;
-
 
 public class HL7OperationMessage extends HL7Message {
 	@XmlElement(required = true)
@@ -25,8 +27,6 @@ public class HL7OperationMessage extends HL7Message {
     public List<HL7MessageReceiver> receiver;
     @XmlElement(required = true)
     public HL7MessageSender sender;
-    @XmlElement(required = true)
-    public ControlActProcess controlActProcess;
     @XmlElement(required = true)
     public CS acceptAckCode;
 

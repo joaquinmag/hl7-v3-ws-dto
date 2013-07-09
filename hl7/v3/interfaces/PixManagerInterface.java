@@ -10,6 +10,8 @@ import javax.jws.soap.SOAPBinding.ParameterStyle;
 import org.apache.cxf.annotations.WSDLDocumentation;
 
 import com.janpix.hl7dto.hl7.v3.messages.HL7OperationMessage;
+import com.janpix.hl7dto.hl7.v3.messages.AddPatientOperationMessage;
+import com.janpix.hl7dto.hl7.v3.messages.QueryPatientOperationMessage;
 import com.janpix.hl7dto.hl7.v3.messages.ack.AcknowledgmentMessage;
 import com.janpix.hl7dto.hl7.v3.messages.ack.QueryAcknowledgmentMessage;
 
@@ -29,7 +31,7 @@ public interface PixManagerInterface {
 	@WSDLDocumentation("Add new patients to the PIX. Patient Registry Record Added(IHE_ITI Vol 2b - Seccion: 3.44.4.1)")
 	public AcknowledgmentMessage AddNewPatient(
 			@WebParam(name = "PRPA_IN201301UV02",targetNamespace="urn:hl7-org:v3",partName="Body") 
-			HL7OperationMessage body
+			AddPatientOperationMessage body
 		);
 	
 	
@@ -72,7 +74,7 @@ public interface PixManagerInterface {
 	@WSDLDocumentation("Returns all the identifiers of a patient. Patient Registry Get Identifiers Query (IHE_ITI Vol 2b - Seccion: 3.45.4)")
 	public QueryAcknowledgmentMessage GetAllIdentifiersPatient(
 			@WebParam( name = "PRPA_IN201309UV02", targetNamespace = "urn:hl7-org:v3", partName = "Body")
-			HL7OperationMessage body);
+			QueryPatientOperationMessage body);
 	
 	
 	
