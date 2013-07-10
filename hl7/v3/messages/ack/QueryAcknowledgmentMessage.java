@@ -1,7 +1,8 @@
 package com.janpix.hl7dto.hl7.v3.messages.ack;
 
-public class QueryAcknowledgmentMessage {
-	AcknowledgmentMessage ackMessage;
-	//TODO add controlActprocess
+import javax.xml.bind.annotation.XmlType;
 
+@XmlType(name = "PRPA_IN201310UV02")
+public class QueryAcknowledgmentMessage extends AcknowledgmentMessage {
+	public QueryAckControlActProcess controlActProcess;
 }
