@@ -9,6 +9,7 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
 import com.janpix.hl7dto.hl7.v3.datatypes.CD;
+import com.janpix.hl7dto.hl7.v3.datatypes.enums.ActClassControlAct;
 import com.janpix.hl7dto.hl7.v3.datatypes.enums.XActMoodIntentEvent;
 import com.janpix.hl7dto.hl7.v3.messages.QueryControlActProcess;
 import com.janpix.hl7dto.hl7.v3.messages.Subject1;
@@ -25,5 +26,6 @@ public class QueryAckControlActProcess extends QueryControlActProcess {
     	this.subject = new ArrayList<Subject1>();
     	this.code = new CD("PRPA_TE201310UV02");
     	this.moodCode = XActMoodIntentEvent.EVN;
+    	this.classCode = ActClassControlAct.CACT;
     }
 }

@@ -6,8 +6,6 @@ import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlTransient;
-
 
 import com.janpix.hl7dto.hl7.v3.datatypes.CS;
 import com.janpix.hl7dto.hl7.v3.datatypes.II;
@@ -18,7 +16,6 @@ import com.janpix.hl7dto.hl7.v3.messages.HL7MessageReceiver;
 import com.janpix.hl7dto.hl7.v3.messages.HL7MessageSender;
 
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlTransient
 public class AcknowledgmentMessage extends HL7Message
 {
     @XmlElement(required = true)

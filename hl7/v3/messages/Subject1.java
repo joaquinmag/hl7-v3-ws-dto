@@ -17,5 +17,6 @@ public class Subject1 {
     
     public Subject1() {
     	typeCode = new ArrayList<String>();
+    	typeCode.add("SUBJ");
     }
 }

@@ -13,6 +13,7 @@ import com.janpix.hl7dto.hl7.v3.messages.HL7OperationMessage;
 import com.janpix.hl7dto.hl7.v3.messages.AddPatientOperationMessage;
 import com.janpix.hl7dto.hl7.v3.messages.QueryPatientOperationMessage;
 import com.janpix.hl7dto.hl7.v3.messages.ack.AcknowledgmentMessage;
+import com.janpix.hl7dto.hl7.v3.messages.ack.AddPatientAcknowledgmentMessage;
 import com.janpix.hl7dto.hl7.v3.messages.ack.QueryAcknowledgmentMessage;
 
 
@@ -29,7 +30,7 @@ public interface PixManagerInterface {
 	@WebMethod(operationName = "PRPA_IN201301UV02_Message")
 	@WebResult(name = "MCCI_IN000002UV01",targetNamespace="urn:hl7-org:v3",partName = "Body")
 	@WSDLDocumentation("Add new patients to the PIX. Patient Registry Record Added(IHE_ITI Vol 2b - Seccion: 3.44.4.1)")
-	public AcknowledgmentMessage AddNewPatient(
+	public AddPatientAcknowledgmentMessage AddNewPatient(
 			@WebParam(name = "PRPA_IN201301UV02",targetNamespace="urn:hl7-org:v3",partName="Body") 
 			AddPatientOperationMessage body
 		);
@@ -44,7 +45,7 @@ public interface PixManagerInterface {
 	@WebMethod(operationName = "PRPA_IN201304UV02_Message")
 	@WebResult(name = "MCCI_IN000002UV01", targetNamespace = "urn:hl7-org:v3", partName = "Body")
 	@WSDLDocumentation("Merges two patients that where added as different patients. Patient Registry Duplicates Resolved (IHE_ITI Vol 2b - Seccion: 3.44.4)")
-	public AcknowledgmentMessage MergePatients(
+	public AddPatientAcknowledgmentMessage MergePatients(
 			@WebParam(name = "PRPA_IN201304UV02", targetNamespace = "urn:hl7-org:v3",partName = "Body")
 			HL7OperationMessage body
 		);
@@ -58,7 +59,7 @@ public interface PixManagerInterface {
 	@WebMethod(operationName = "PRPA_IN201302UV02_Message")
 	@WebResult(name = "MCCI_IN000002UV01", targetNamespace = "urn:hl7-org:v3", partName = "Body")
 	@WSDLDocumentation("This method is for updating patient information. Patient Registry Record Revised(IHE_ITI Vol 2b - Seccion: 3.44.4.1)")
-	public AcknowledgmentMessage UpdatePatient (
+	public AddPatientAcknowledgmentMessage UpdatePatient (
 			@WebParam(name = "PRPA_IN201302UV02", targetNamespace = "urn:hl7-org:v3",partName = "Body")
 			HL7OperationMessage body
 		);

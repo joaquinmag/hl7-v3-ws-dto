@@ -6,6 +6,7 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
 import com.janpix.hl7dto.hl7.v3.datatypes.CD;
+import com.janpix.hl7dto.hl7.v3.messages.ack.QueryAckValue;
 import com.janpix.hl7dto.hl7.v3.messages.query.QueryByParameter;
 
 @XmlAccessorType(XmlAccessType.FIELD)
