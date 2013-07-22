@@ -17,17 +17,22 @@ import com.janpix.hl7dto.hl7.v3.messages.ack.AddPatientAcknowledgmentMessage;
 import com.janpix.hl7dto.hl7.v3.messages.ack.QueryAcknowledgmentMessage;
 
 
-@WebService(name = "PixManager",targetNamespace = "urn:ihe:iti:pixv3:2007")
+@WebService(
+		name = "PixManager",
+		targetNamespace = "urn:ihe:iti:pixv3:2007",
+		serviceName = "PIXManager_Service",
+		portName = "PIXManager_PortType"
+		)
 @SOAPBinding(parameterStyle=ParameterStyle.BARE) 
 public interface PixManagerInterface {
 	
 	/**
 	 * Add new patients to the PIX. 
-	 * Patient Registry Record Added(IHE_ITI Vol 2b - Seccion: 3.44.4.1
+	 * Patient Registry Record Added(IHE_ITI Vol 2b - Seccion: 3.44.4.1. PIXManager_PRPA_IN201301UV02
 	 * @param body PRPA_IN201301UV02 @see <a href="ftp://ftp.ihe.net/TF_Implementation_Material/ITI/examples/PIXV3/01_PatientRegistryRecordAdded1.xml">link</a> )
 	 * @return ACK : MCCI_IN000002UV01 @see <a href="ftp://ftp.ihe.net/TF_Implementation_Material/ITI/examples/PIXV3/02_PatientRegistryRecordAdded1Ack.xml>link</a>
 	 */
-	@WebMethod(operationName = "PRPA_IN201301UV02_Message")
+	@WebMethod(operationName = "PatientRegistryRecordAdded")
 	@WebResult(name = "MCCI_IN000002UV01",targetNamespace="urn:hl7-org:v3",partName = "Body")
 	@WSDLDocumentation("Add new patients to the PIX. Patient Registry Record Added(IHE_ITI Vol 2b - Seccion: 3.44.4.1)")
 	public AddPatientAcknowledgmentMessage AddNewPatient(
@@ -35,14 +40,15 @@ public interface PixManagerInterface {
 			AddPatientOperationMessage body
 		);
 	
+
 	
 	/**
 	 * Merges two patients that where added as different patients
-	 * Patient Registry Duplicates Resolved (IHE_ITI Vol 2b - Seccion: 3.44.4)
+	 * Patient Registry Duplicates Resolved (IHE_ITI Vol 2b - Seccion: 3.44.4).PIXManager_PRPA_IN201304UV02
 	 * @param body PRPA_IN201304UV02 (ej: ftp://ftp.ihe.net/TF_Implementation_Material/ITI/examples/PIXV3/05_PatientRegistryDuplicatesResolved.xml )
 	 * @return ACK : MCCI_IN000002UV01 @see <a href="ftp://ftp.ihe.net/TF_Implementation_Material/ITI/examples/PIXV3/02_PatientRegistryRecordAdded1Ack.xml>link</a>
 	 */
-	@WebMethod(operationName = "PRPA_IN201304UV02_Message")
+	@WebMethod(operationName = "PatientRegistryDuplicatesResolved")
 	@WebResult(name = "MCCI_IN000002UV01", targetNamespace = "urn:hl7-org:v3", partName = "Body")
 	@WSDLDocumentation("Merges two patients that where added as different patients. Patient Registry Duplicates Resolved (IHE_ITI Vol 2b - Seccion: 3.44.4)")
 	public AddPatientAcknowledgmentMessage MergePatients(
@@ -52,11 +58,11 @@ public interface PixManagerInterface {
 	
 	/**
 	 * This method is for updating patient information
-	 * Patient Registry Record Revised(IHE_ITI Vol 2b - Seccion: 3.44.4.1)
+	 * Patient Registry Record Revised(IHE_ITI Vol 2b - Seccion: 3.44.4.1).PIXManager_PRPA_IN201302UV02
 	 * @param body PRPA_IN201302UV02 @see <a href="ftp://ftp.ihe.net/TF_Implementation_Material/ITI/examples/PIXV3/04_PatientRegistryRecordRevised2.xml">link</a>
 	 * @return ACK : MCCI_IN000002UV01 @see <a href="ftp://ftp.ihe.net/TF_Implementation_Material/ITI/examples/PIXV3/02_PatientRegistryRecordAdded1Ack.xml">link</a>
 	 */
-	@WebMethod(operationName = "PRPA_IN201302UV02_Message")
+	@WebMethod(operationName = "PatientRegistryRecordRevised")
 	@WebResult(name = "MCCI_IN000002UV01", targetNamespace = "urn:hl7-org:v3", partName = "Body")
 	@WSDLDocumentation("This method is for updating patient information. Patient Registry Record Revised(IHE_ITI Vol 2b - Seccion: 3.44.4.1)")
 	public AddPatientAcknowledgmentMessage UpdatePatient (
@@ -66,11 +72,11 @@ public interface PixManagerInterface {
 	
 	/**
 	 * Returns all the identifiers of a patient.
-	 * Patient Registry Get Identifiers Query (IHE_ITI Vol 2b - Seccion: 3.45.4)
+	 * Patient Registry Get Identifiers Query (IHE_ITI Vol 2b - Seccion: 3.45.4). PIXManager_PRPA_IN201310UV02
 	 * @param body PRPA_IN201309UV02 @see <a href="ftp://ftp.ihe.net/TF_Implementation_Material/ITI/examples/PIXV3/06_PIXQuery1.xml">link</a>
 	 * @return PRPA_IN201310UV02 @see <a href="ftp://ftp.ihe.net/TF_Implementation_Material/ITI/examples/PIXV3/07_PIXQuery1Response.xml">link</a>
 	 */
-	@WebMethod(operationName = "PRPA_IN201309UV02_Message")
+	@WebMethod(operationName = "PatientRegistryGetIdentifiersQuery",action = "urn:hl7-org:v3:PRPA_IN201301UV02")
 	@WebResult(name = "PRPA_IN201310UV02", targetNamespace = "urn:hl7-org:v3", partName = "Body")
 	@WSDLDocumentation("Returns all the identifiers of a patient. Patient Registry Get Identifiers Query (IHE_ITI Vol 2b - Seccion: 3.45.4)")
 	public QueryAcknowledgmentMessage GetAllIdentifiersPatient(
@@ -78,8 +84,36 @@ public interface PixManagerInterface {
 			QueryPatientOperationMessage body);
 	
 	
+	/** Metodos Extendidos **/
 	
-	//TODO Faltan metodos extendidos!!!
+	/**
+	 * Add new patients to the PIX without validate matching with other patients. 
+	 * This method is an extension of IHE Protocol
+	 * @param body PRPA_IN201301UV02 @see <a href="ftp://ftp.ihe.net/TF_Implementation_Material/ITI/examples/PIXV3/01_PatientRegistryRecordAdded1.xml">link</a> )
+	 * @return ACK : MCCI_IN000002UV01 @see <a href="ftp://ftp.ihe.net/TF_Implementation_Material/ITI/examples/PIXV3/02_PatientRegistryRecordAdded1Ack.xml>link</a>
+	 */
+	@WebMethod(operationName = "PatientRegistryRecordAddedWithoutValidation")
+	@WebResult(name = "MCCI_IN000002UV01", targetNamespace = "urn:hl7-org:v3", partName = "Body")
+	@WSDLDocumentation("Add new patients to the PIX without validate matching with other patients.")
+	public AddPatientAcknowledgmentMessage AddNewPatientWithoutValidation(
+			@WebParam(name = "PRPA_IN201302UV02",targetNamespace="urn:hl7-org:v3",partName="Body") 
+			AddPatientOperationMessage body);
+	
+	
+	/**
+	 * Returns all patient maching with Patient 
+	 * This method is an extension of IHE Protocol
+	 * FIXME! Ver que Objetos debe enviar y recibir
+	 * @param body PRPA_IN201301UV02 @see <a href="ftp://ftp.ihe.net/TF_Implementation_Material/ITI/examples/PIXV3/01_PatientRegistryRecordAdded1.xml">link</a> )
+	 * @return ACK : MCCI_IN000002UV01 @see <a href="ftp://ftp.ihe.net/TF_Implementation_Material/ITI/examples/PIXV3/02_PatientRegistryRecordAdded1Ack.xml>link</a>
+	 */
+	@WebMethod(operationName = "GetAllPossibleMatchedPatients")
+	@WebResult(name = "MCCI_IN000002UV01", targetNamespace = "urn:hl7-org:v3", partName = "Body")
+	@WSDLDocumentation("Returns all patient maching with Patient")
+	public QueryAcknowledgmentMessage GetAllPossibleMatchedPatients(
+			@WebParam(name = "PRPA_IN201302UV02",targetNamespace="urn:hl7-org:v3",partName="Body") 
+			AddPatientOperationMessage body);
+	
 	
 	
 	//@Action(input = "urn:hl7-org:v3:PRPA_IN201301UV02_Message", output = "urn:hl7-org:v3:MCCI_IN000002UV01_Message")
