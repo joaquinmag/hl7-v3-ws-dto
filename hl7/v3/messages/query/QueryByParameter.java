@@ -11,7 +11,7 @@ import com.janpix.hl7dto.hl7.v3.datatypes.II;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "PRPA_MT201307UV02.QueryByParameter")
 public class QueryByParameter {
-    @XmlElement(required = true)
+    @XmlElement(required = true, name = "queryId")
     public II queryId;
     @XmlElement(required = true)
     public CS statusCode;
