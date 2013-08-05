@@ -10,7 +10,7 @@ import javax.jws.soap.SOAPBinding.ParameterStyle;
 import org.apache.cxf.annotations.WSDLDocumentation;
 
 import com.janpix.hl7dto.hl7.v3.messages.HL7OperationMessage;
-import com.janpix.hl7dto.hl7.v3.messages.AddPatientOperationMessage;
+import com.janpix.hl7dto.hl7.v3.messages.PatientOperationMessage;
 import com.janpix.hl7dto.hl7.v3.messages.QueryPatientOperationMessage;
 import com.janpix.hl7dto.hl7.v3.messages.ack.AcknowledgmentMessage;
 import com.janpix.hl7dto.hl7.v3.messages.ack.AddPatientAcknowledgmentMessage;
@@ -37,7 +37,7 @@ public interface PixManagerInterface {
 	@WSDLDocumentation("Add new patients to the PIX. Patient Registry Record Added(IHE_ITI Vol 2b - Seccion: 3.44.4.1)")
 	public AddPatientAcknowledgmentMessage AddNewPatient(
 			@WebParam(name = "PRPA_IN201301UV02",targetNamespace="urn:hl7-org:v3",partName="Body") 
-			AddPatientOperationMessage body
+			PatientOperationMessage body
 		);
 	
 
@@ -67,7 +67,7 @@ public interface PixManagerInterface {
 	@WSDLDocumentation("This method is for updating patient information. Patient Registry Record Revised(IHE_ITI Vol 2b - Seccion: 3.44.4.1)")
 	public AddPatientAcknowledgmentMessage UpdatePatient (
 			@WebParam(name = "PRPA_IN201302UV02", targetNamespace = "urn:hl7-org:v3",partName = "Body")
-			HL7OperationMessage body
+			PatientOperationMessage body
 		);
 	
 	/**
@@ -97,7 +97,7 @@ public interface PixManagerInterface {
 	@WSDLDocumentation("Add new patients to the PIX without validate matching with other patients.")
 	public AddPatientAcknowledgmentMessage AddNewPatientWithoutValidation(
 			@WebParam(name = "PRPA_IN201302UV02",targetNamespace="urn:hl7-org:v3",partName="Body") 
-			AddPatientOperationMessage body);
+			PatientOperationMessage body);
 	
 	
 	/**
@@ -112,7 +112,7 @@ public interface PixManagerInterface {
 	@WSDLDocumentation("Returns all patient maching with Patient")
 	public QueryAcknowledgmentMessage GetAllPossibleMatchedPatients(
 			@WebParam(name = "PRPA_IN201302UV02",targetNamespace="urn:hl7-org:v3",partName="Body") 
-			AddPatientOperationMessage body);
+			PatientOperationMessage body);
 	
 	
 	

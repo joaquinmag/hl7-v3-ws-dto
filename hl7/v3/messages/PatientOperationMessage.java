@@ -7,7 +7,7 @@ import javax.xml.bind.annotation.XmlType;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "PRPA_IN201301UV02")
-public class AddPatientOperationMessage extends HL7OperationMessage {
+public class PatientOperationMessage extends HL7OperationMessage {
 	@XmlElement(required = true, name = "controlActProcess")
 	public PatientControlActProcess controlActProcess;
 }
