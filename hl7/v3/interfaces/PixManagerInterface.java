@@ -12,7 +12,6 @@ import org.apache.cxf.annotations.WSDLDocumentation;
 import com.janpix.hl7dto.hl7.v3.messages.HL7OperationMessage;
 import com.janpix.hl7dto.hl7.v3.messages.PatientOperationMessage;
 import com.janpix.hl7dto.hl7.v3.messages.QueryPatientOperationMessage;
-import com.janpix.hl7dto.hl7.v3.messages.ack.AcknowledgmentMessage;
 import com.janpix.hl7dto.hl7.v3.messages.ack.AddPatientAcknowledgmentMessage;
 import com.janpix.hl7dto.hl7.v3.messages.ack.QueryAcknowledgmentMessage;
 
