@@ -24,5 +24,7 @@ public class II {
 	@XmlAttribute(name = "displayable")
 	public Boolean displayable;
 
-
+	public String toString() {
+		return "root: " + root + ", extensión: " + extension + ", assigningAuth: " + assigningAuthorityName;
+	}
 };
